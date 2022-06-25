@@ -1,0 +1,12 @@
+# http://editorconfig.org
+# https://github.com/expressjs/express/blob/master/.editorconfig
+root = true
+
+[*]
+charset = utf-8
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[{*.js,*.json,*.yml}]
+indent_size = 2
+indent_style = space
