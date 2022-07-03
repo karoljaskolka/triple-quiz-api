@@ -12,7 +12,7 @@ const checkToken = require("../middlewares/check-token");
 const hasAdminRole = require("../middlewares/has-admin-role");
 const isOwner = require("../middlewares/is-owner");
 
-router.get("/:id", [checkToken], getUser);
+router.get("/:id", [checkToken, isOwner], getUser);
 
 router.get("/", [checkToken, hasAdminRole], getUsers);
 
