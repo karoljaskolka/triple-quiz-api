@@ -32,6 +32,7 @@ const QuestionTranslation = sequelize.define(
   },
   {
     tableName: "QuestionTranslations",
+    timestamps: false,
   }
 );
 

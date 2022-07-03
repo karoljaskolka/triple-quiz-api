@@ -73,7 +73,9 @@ exports.guest = async (req, res) => {
       role: "ROLE_GUEST",
     });
     const token = signToken(user);
-    res.status(201).json(token);
+    res.status(201).json({
+      token: token,
+    });
   } catch (err) {
     res.status(500).json({
       error_message: "error.internal-server-error",

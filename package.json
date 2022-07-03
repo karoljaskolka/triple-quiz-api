@@ -11,7 +11,10 @@
     "lint": "eslint --fix .",
     "lint:check": "eslint .",
     "lint-staged:quiet": "lint-staged --quiet",
-    "commit": "lint-staged"
+    "commit": "lint-staged",
+    "db:migrate": "cd src && npx sequelize-cli db:migrate",
+    "db:undo": "cd src && npx sequelize-cli db:migrate:undo:all",
+    "db:drop": "cd src && npx sequelize-cli db:drop"
   },
   "lint-staged": {
     "*.js": [
@@ -38,6 +41,7 @@
     "eslint": "^8.18.0",
     "lint-staged": "^13.0.3",
     "pre-commit": "^1.2.2",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "sequelize-cli": "^6.4.1"
   }
 }

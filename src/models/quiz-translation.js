@@ -20,6 +20,7 @@ const QuizTranslation = sequelize.define(
   },
   {
     tableName: "QuizTranslations",
+    timestamps: false,
   }
 );
 
