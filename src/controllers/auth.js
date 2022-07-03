@@ -1,10 +1,10 @@
 const signToken = require("../utils/sign-token");
-const User = require("../models/user");
+const models = require("../models/");
 const bcrypt = require("bcrypt");
 
 exports.login = async (req, res) => {
   try {
-    const user = await User.findOne({
+    const user = await models.User.findOne({
       where: {
         login: req.body.login,
       },
@@ -35,7 +35,7 @@ exports.login = async (req, res) => {
 
 exports.register = async (req, res) => {
   try {
-    const user = await User.findOne({
+    const user = await models.User.findOne({
       where: {
         login: req.body.login,
       },
@@ -46,7 +46,7 @@ exports.register = async (req, res) => {
       });
     }
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
-    const newUser = await User.create({
+    const newUser = await models.User.create({
       login: req.body.login,
       password: hashedPassword,
       role: "ROLE_USER",
@@ -67,7 +67,7 @@ exports.register = async (req, res) => {
 
 exports.guest = async (req, res) => {
   try {
-    const user = await User.create({
+    const user = await models.User.create({
       login: `GUEST_${Math.floor(Math.random() * 2147483647)}`,
       password: null,
       role: "ROLE_GUEST",

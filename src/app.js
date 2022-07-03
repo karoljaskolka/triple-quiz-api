@@ -7,7 +7,7 @@ dotenv.config();
 const port = process.env.PORT || 8000;
 const host = process.env.HOST || "localhost";
 
-const { sequelize } = require("./sequelize");
+const { sequelize } = require("./models");
 
 sequelize
   .authenticate()

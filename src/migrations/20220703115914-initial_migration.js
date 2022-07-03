@@ -138,7 +138,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.UUID,
       },
-      password: {
+      correct: {
         allowNull: false,
         type: Sequelize.INTEGER,
       },

@@ -1,10 +1,10 @@
-const User = require("../models/user");
+const models = require("../models/");
 const bcrypt = require("bcrypt");
 
 exports.getUser = async (req, res) => {
   const id = req.params.id;
   try {
-    const user = await User.findOne({
+    const user = await models.User.findOne({
       attributes: ["id", "login", "role", "createdAt"],
       where: {
         id: id,
@@ -26,7 +26,7 @@ exports.getUsers = async (req, res) => {
   const page = req.query.page || 1;
   const perPage = req.query.perPage || 10;
   try {
-    const users = await User.findAll({
+    const users = await models.User.findAll({
       limit: perPage,
       offset: (page - 1) * perPage,
       attributes: ["id", "login", "role", "createdAt"],
@@ -44,7 +44,7 @@ exports.patchUser = async (req, res) => {
   const id = req.params.id;
   try {
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
-    const user = await User.update(
+    const user = await models.User.update(
       {
         password: hashedPassword,
       },
@@ -72,7 +72,7 @@ exports.patchUser = async (req, res) => {
 exports.deleteUser = async (req, res) => {
   const id = req.params.id;
   try {
-    const result = await User.destroy({
+    const result = await models.User.destroy({
       where: {
         id: id,
       },

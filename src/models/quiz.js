@@ -1,23 +1,41 @@
-const { DataTypes } = require("sequelize");
-const { sequelize } = require("../sequelize");
-
-const QuizTranslation = require("./quiz-translation");
-
-const Quiz = sequelize.define(
-  "Quiz",
-  {
-    id: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
-      primaryKey: true,
-    },
-  },
-  {
-    tableName: "Quizzes",
+"use strict";
+const { Model } = require("sequelize");
+module.exports = (sequelize, DataTypes) => {
+  class Quiz extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      this.hasMany(models.Question, {
+        foreignKey: "quizId",
+      });
+      this.hasMany(models.Score, {
+        foreignKey: "quizId",
+      });
+      this.belongsTo(models.QuizTranslation, {
+        as: "en",
+        foreignKey: "translationEN",
+      });
+      this.belongsTo(models.QuizTranslation, {
+        as: "pl",
+        foreignKey: "translationPL",
+      });
+    }
   }
-);
-
-QuizTranslation.hasOne(Quiz, { foreignKey: "translationEN" });
-QuizTranslation.hasOne(Quiz, { foreignKey: "translationPL" });
-
-module.exports = Quiz;
+  Quiz.init(
+    {
+      id: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        primaryKey: true,
+      },
+    },
+    {
+      sequelize,
+      modelName: "Quiz",
+    }
+  );
+  return Quiz;
+};
