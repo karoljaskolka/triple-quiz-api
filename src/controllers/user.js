@@ -31,7 +31,13 @@ exports.getUsers = async (req, res) => {
       offset: (page - 1) * perPage,
       attributes: ["id", "login", "role", "createdAt"],
     });
-    return res.status(200).json(users);
+    const totalItems = await models.User.count();
+    return res.status(200).json({
+      results: users,
+      page: page,
+      perPage: perPage,
+      totalItems: totalItems,
+    });
   } catch (err) {
     res.status(500).json({
       error_message: "error.internal-server-error",
@@ -72,6 +78,15 @@ exports.patchUser = async (req, res) => {
 exports.deleteUser = async (req, res) => {
   const id = req.params.id;
   try {
+    const user = await models.User.findOne({
+      where: {
+        id: id,
+      },
+    });
+    if (!user)
+      return res.status(404).json({
+        error_message: "error.not-found",
+      });
     const result = await models.User.destroy({
       where: {
         id: id,
