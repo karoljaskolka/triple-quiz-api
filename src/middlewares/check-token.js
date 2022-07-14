@@ -9,7 +9,7 @@ module.exports = (req, res, next) => {
     const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
     req.userId = decoded.userId;
     req.userRole = decoded.userRole;
-    next();
+    return next();
   } catch (err) {
     return res.status(401).json({
       error_message: "error.auth.unauthorized",

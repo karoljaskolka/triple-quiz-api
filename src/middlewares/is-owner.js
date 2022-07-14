@@ -1,6 +1,6 @@
 module.exports = (req, res, next) => {
   try {
-    if (req.userId === req.params.id) next();
+    if (req.userId === req.params.id) return next();
     throw new Error("You are not an owner of the resource");
   } catch (err) {
     return res.status(403).json({
