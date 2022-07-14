@@ -1,0 +1,14 @@
+components:
+  schemas:
+    Quiz:
+      properties:
+        id:
+          type: string
+          format: uuid
+        en:
+          $ref: '#/components/schemas/QuizTranslation'
+        pl:
+          $ref: '#/components/schemas/QuizTranslation'
+        createdAt:
+          type: string
+          format: date

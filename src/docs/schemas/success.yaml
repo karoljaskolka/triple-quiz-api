@@ -1,0 +1,6 @@
+components:
+  schemas:
+    Success:
+      properties:
+        success_message:
+          type: string

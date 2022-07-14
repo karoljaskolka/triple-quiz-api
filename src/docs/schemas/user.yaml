@@ -1,0 +1,14 @@
+components:
+  schemas:
+    User:
+      properties:
+        id:
+          type: string
+          format: uuid
+        login:
+          type: string
+        role:
+          type: string
+        createdAt:
+          type: string
+          format: date

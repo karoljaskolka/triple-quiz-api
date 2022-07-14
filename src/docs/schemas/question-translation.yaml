@@ -1,0 +1,20 @@
+components:
+  schemas:
+    QuestionTranslation:
+      properties:
+        id:
+          type: string
+          format: uuid
+        question:
+          type: string
+        answerA:
+          type: string
+        answerB:
+          type: string
+        answerC:
+          type: string
+        answerD:
+          type: string
+        createdAt:
+          type: string
+          format: date

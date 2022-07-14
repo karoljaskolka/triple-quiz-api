@@ -1,0 +1,19 @@
+components:
+  schemas:
+    Question:
+      properties:
+        id:
+          type: string
+          format: uuid
+        correct:
+          type: integer
+        quizId:
+          type: string
+          format: uuid
+        en:
+          $ref: '#/components/schemas/QuestionTranslation'
+        pl:
+          $ref: '#/components/schemas/QuestionTranslation'
+        createdAt:
+          type: string
+          format: date

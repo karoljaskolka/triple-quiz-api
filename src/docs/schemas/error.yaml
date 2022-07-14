@@ -1,0 +1,8 @@
+components:
+  schemas:
+    Error:
+      properties:
+        error_message:
+          type: string
+        error_log:
+          type: string

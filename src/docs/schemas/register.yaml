@@ -1,0 +1,8 @@
+components:
+  schemas:
+    Register:
+      properties:
+        login:
+          type: string
+        password:
+          type: string
