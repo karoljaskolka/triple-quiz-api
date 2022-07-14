@@ -29,6 +29,13 @@ app.disable("x-powered-by");
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+const swaggerUi = require("swagger-ui-express");
+const swaggerOptions = require("./docs/swagger");
+const swaggerJsdoc = require("swagger-jsdoc");
+const swaggerSpec = swaggerJsdoc(swaggerOptions);
+
+app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/user");
 
