@@ -49,7 +49,6 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "QuestionTranslation",
-      timestamps: false,
     }
   );
   return QuestionTranslation;
