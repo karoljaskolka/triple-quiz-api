@@ -6,23 +6,23 @@
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Login'
+            $ref: '#/components/schemas/LoginDto'
     responses:
       200:
         description: Success
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Token'
+              $ref: '#/components/schemas/TokenDto'
       400:
         description: Bad Request
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Error'
+              $ref: '#/components/schemas/ErrorDto'
       500:
         description: Internal Server Error
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Error'
+              $ref: '#/components/schemas/ErrorDto'

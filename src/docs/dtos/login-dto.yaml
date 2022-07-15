@@ -1,6 +1,6 @@
 components:
   schemas:
-    Login:
+    LoginDto:
       properties:
         login:
           type: string

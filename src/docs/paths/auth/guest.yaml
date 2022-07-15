@@ -8,10 +8,10 @@
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Token'
+              $ref: '#/components/schemas/TokenDto'
       500:
         description: Internal Server Error
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Error'
+              $ref: '#/components/schemas/ErrorDto'

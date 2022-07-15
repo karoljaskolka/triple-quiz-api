@@ -1,0 +1,8 @@
+components:
+  schemas:
+    QuizTranslationDto:
+      properties:
+        name:
+          type: string
+        description:
+          type: string

@@ -1,12 +1,10 @@
 components:
   schemas:
-    User:
+    UserDto:
       properties:
         id:
           type: string
           format: uuid
-        password:
-          type: string
         login:
           type: string
         role:

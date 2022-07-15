@@ -1,16 +1,14 @@
 components:
   schemas:
-    User:
+    QuestionTranslationDto:
       properties:
-        id:
+        question:
           type: string
-          format: uuid
-        password:
+        answerA:
           type: string
-        login:
+        answerB:
           type: string
-        role:
+        answerC:
           type: string
-        createdAt:
+        answerD:
           type: string
-          format: date

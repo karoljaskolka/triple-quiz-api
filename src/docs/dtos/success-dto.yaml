@@ -1,6 +1,6 @@
 components:
   schemas:
-    Token:
+    SuccessDto:
       properties:
-        token:
+        success_message:
           type: string

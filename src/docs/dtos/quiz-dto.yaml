@@ -1,0 +1,8 @@
+components:
+  schemas:
+    QuizDto:
+      properties:
+        en:
+          $ref: '#/components/schemas/QuizTranslationDto'
+        pl:
+          $ref: '#/components/schemas/QuizTranslationDto'

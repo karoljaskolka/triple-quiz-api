@@ -1,6 +1,6 @@
 components:
   schemas:
-    Error:
+    ErrorDto:
       properties:
         error_message:
           type: string

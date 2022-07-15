@@ -30,22 +30,22 @@
                 results:
                   type: array
                   items:
-                    $ref: '#/components/schemas/User'
+                    $ref: '#/components/schemas/UserDto'
       401:
         description: Unauthorized
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Error'
+              $ref: '#/components/schemas/ErrorDto'
       403:
         description: Forbidden
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Error'
+              $ref: '#/components/schemas/ErrorDto'
       500:
         description: Internal Server Error
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Error'
+              $ref: '#/components/schemas/ErrorDto'

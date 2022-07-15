@@ -6,23 +6,23 @@
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Register'
+            $ref: '#/components/schemas/RegisterDto'
     responses:
       201:
         description: Created
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/User'
+              $ref: '#/components/schemas/UserDto'
       400:
         description: Bad Request
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Error'
+              $ref: '#/components/schemas/ErrorDto'
       500:
         description: Internal Server Error
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Error'
+              $ref: '#/components/schemas/ErrorDto'

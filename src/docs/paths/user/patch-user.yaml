@@ -15,35 +15,35 @@
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Password'
+            $ref: '#/components/schemas/PasswordDto'
     responses:
       201:
         description: Created
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Success'
+              $ref: '#/components/schemas/SuccessDto'
       401:
         description: Unauthorized
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Error'
+              $ref: '#/components/schemas/ErrorDto'
       403:
         description: Forbidden
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Error'
+              $ref: '#/components/schemas/ErrorDto'
       404:
         description: Not found
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Error'
+              $ref: '#/components/schemas/ErrorDto'
       500:
         description: Internal Server Error
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Error'
+              $ref: '#/components/schemas/ErrorDto'

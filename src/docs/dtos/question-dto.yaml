@@ -1,0 +1,13 @@
+components:
+  schemas:
+    QuestionDto:
+      properties:
+        correct:
+          type: integer
+        quizId:
+          type: string
+          format: uuid
+        en:
+          $ref: '#/components/schemas/QuestionTranslationDto'
+        pl:
+          $ref: '#/components/schemas/QuestionTranslationDto'
