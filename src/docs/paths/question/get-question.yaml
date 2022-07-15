@@ -1,0 +1,43 @@
+/api/questions/{id}:
+  get:
+    security:
+      - Authorization: []
+    tags:
+      - Question
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+    responses:
+      200:
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Question'
+      401:
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ErrorDto'
+      403:
+        description: Forbidden
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ErrorDto'
+      404:
+        description: Not Found
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ErrorDto'
+      500:
+        description: Internal Server Error
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ErrorDto'

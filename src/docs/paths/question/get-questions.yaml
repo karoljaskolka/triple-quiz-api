@@ -1,0 +1,50 @@
+/api/questions:
+  get:
+    security:
+      - Authorization: []
+    tags:
+      - Question
+    parameters:
+      - in: query
+        name: page
+        schema:
+          type: string
+      - in: query
+        name: perPage
+        schema:
+          type: string
+      - in: query
+        name: quizId
+        schema:
+          type: string
+          format: uuid
+    responses:
+      200:
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                page:
+                  type: integer
+                perPage:
+                  type: integer
+                totalItems:
+                  type: integer
+                results:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Question'
+      401:
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ErrorDto'
+      500:
+        description: Internal Server Error
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ErrorDto'
