@@ -7,8 +7,9 @@ components:
           format: uuid
         score:
           type: integer
-        user:
-          $ref: '#/components/schemas/User'
+        userId:
+          type: string
+          format: uuid
         quizId:
           type: string
           format: uuid

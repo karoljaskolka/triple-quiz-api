@@ -128,7 +128,6 @@ module.exports = {
         references: {
           model: "Users",
           key: "id",
-          as: "userId",
         },
         type: Sequelize.UUID,
       },
@@ -136,7 +135,6 @@ module.exports = {
         references: {
           model: "Quizzes",
           key: "id",
-          as: "quizId",
         },
         type: Sequelize.UUID,
       },
@@ -162,7 +160,6 @@ module.exports = {
         references: {
           model: "Quizzes",
           key: "id",
-          as: "quizId",
         },
         type: Sequelize.UUID,
       },
