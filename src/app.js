@@ -5,7 +5,6 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const port = process.env.PORT || 8000;
-const host = process.env.HOST || "localhost";
 
 const { sequelize } = require("./models");
 
@@ -13,8 +12,8 @@ sequelize
   .authenticate()
   .then(() => {
     console.log("Connection has been established successfully.");
-    app.listen(port, host, () => {
-      console.log(`Server is listening on ${host}:${port}`);
+    app.listen(port, () => {
+      console.log(`Server is listening on ${port}`);
     });
   })
   .catch((err) => {
