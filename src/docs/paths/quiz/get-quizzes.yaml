@@ -1,0 +1,45 @@
+/api/quizzes:
+  get:
+    security:
+      - Authorization: []
+    tags:
+      - Quiz
+    parameters:
+      - in: query
+        name: page
+        schema:
+          type: string
+      - in: query
+        name: perPage
+        schema:
+          type: string
+    responses:
+      200:
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                page:
+                  type: integer
+                perPage:
+                  type: integer
+                totalItems:
+                  type: integer
+                results:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Quiz'
+      401:
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ErrorDto'
+      500:
+        description: Internal Server Error
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ErrorDto'

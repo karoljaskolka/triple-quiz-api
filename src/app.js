@@ -38,9 +38,11 @@ app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/user");
+const quizRoutes = require("./routes/quiz");
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/quizzes", quizRoutes);
 
 app.use((req, res, next) => {
   res.status(404).json({

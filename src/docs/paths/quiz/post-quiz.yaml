@@ -1,0 +1,36 @@
+/api/quizzes:
+  post:
+    security:
+      - Authorization: []
+    tags:
+      - Quiz
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/QuizDto'
+    responses:
+      201:
+        description: Created
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Quiz'
+      401:
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ErrorDto'
+      403:
+        description: Forbidden
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ErrorDto'
+      500:
+        description: Internal Server Error
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ErrorDto'
