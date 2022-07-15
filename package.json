@@ -14,7 +14,10 @@
     "commit": "lint-staged",
     "db:migrate": "cd src && npx sequelize-cli db:migrate",
     "db:undo": "cd src && npx sequelize-cli db:migrate:undo:all",
-    "db:drop": "cd src && npx sequelize-cli db:drop"
+    "db:drop": "cd src && npx sequelize-cli db:drop",
+    "db:migrate:prod": "cd src && npx sequelize-cli db:migrate --env=production",
+    "db:undo:prod": "cd src && npx sequelize-cli db:migrate:undo:all --env=production",
+    "db:drop:prod": "cd src && npx sequelize-cli db:drop --env=production"
   },
   "lint-staged": {
     "*.js": [
