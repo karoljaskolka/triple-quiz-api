@@ -4,9 +4,6 @@ components:
       properties:
         score:
           type: integer
-        userId:
-          type: string
-          format: uuid
         quizId:
           type: string
           format: uuid

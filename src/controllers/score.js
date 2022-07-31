@@ -40,10 +40,11 @@ exports.getScores = async (req, res) => {
 };
 
 exports.postScore = async (req, res) => {
+  const senderId = req.userId;
   try {
     const score = await models.Score.create({
       score: req.body.score,
-      userId: req.body.userId,
+      userId: senderId,
       quizId: req.body.quizId,
     });
     const createdScore = await models.Score.findOne({
