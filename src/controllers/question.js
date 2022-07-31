@@ -164,6 +164,17 @@ exports.putQuestion = async (req, res) => {
         },
       }
     );
+    await models.Question.update(
+      {
+        correct: req.body.correct,
+        quizId: req.body.quizId,
+      },
+      {
+        where: {
+          id: questionId,
+        },
+      }
+    );
     const updatedQuestion = await models.Question.findOne({
       where: {
         id: questionId,
