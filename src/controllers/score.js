@@ -16,6 +16,10 @@ exports.getScores = async (req, res) => {
       limit: perPage,
       offset: (page - 1) * perPage,
       attributes: ["id", "score", "quizId", "createdAt"],
+      order: [
+        ["score", "DESC"],
+        ["createdAt", "ASC"],
+      ],
       include: [
         {
           model: models.User,
