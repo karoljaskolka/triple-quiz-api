@@ -11,7 +11,7 @@ const {
 const checkToken = require("../middlewares/check-token");
 const hasAdminRole = require("../middlewares/has-admin-role");
 
-router.get("/:id", [checkToken, hasAdminRole], getQuiz);
+router.get("/:id", [checkToken], getQuiz);
 
 router.get("/", [checkToken], getQuizzes);
 
