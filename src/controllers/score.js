@@ -46,6 +46,18 @@ exports.getScores = async (req, res) => {
 exports.postScore = async (req, res) => {
   const senderId = req.userId;
   try {
+    // Only first score should be visible in scoreboard
+    const existingScore = await models.Score.findOne({
+      where: {
+        quizId: req.body.quizId,
+        userId: senderId,
+      },
+    });
+    // Return 200 code to not display error message
+    if (existingScore)
+      return res.status(200).json({
+        success_message: "success.no-action-needed",
+      });
     const score = await models.Score.create({
       score: req.body.score,
       userId: senderId,
