@@ -2,10 +2,10 @@
   "name": "triple-quiz-api",
   "version": "0.0.0",
   "description": "Triple Quiz Express.js API",
-  "main": "src/app.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node src/app.js",
-    "watch": "nodemon src/app.js",
+    "start": "node app.js",
+    "watch": "nodemon app.js",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint --fix .",
