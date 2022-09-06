@@ -1,6 +1,6 @@
 {
   "name": "triple-quiz-api",
-  "version": "0.0.0",
+  "version": "1.1.0",
   "description": "Triple Quiz Express.js API",
   "main": "app.js",
   "scripts": {
@@ -32,18 +32,19 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
-    "dotenv": "^16.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
     "express": "^4.18.1",
-    "helmet": "^5.1.1",
+    "helmet": "^6.0.0",
     "jsonwebtoken": "^8.5.1",
-    "pg": "^8.7.3",
+    "pg": "^8.8.0",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.21.3",
+    "sequelize": "^6.21.4",
     "swagger-jsdoc": "^6.2.5",
     "swagger-ui-express": "^4.5.0"
   },
   "devDependencies": {
-    "eslint": "^8.22.0",
+    "eslint": "^8.23.0",
     "lint-staged": "^13.0.3",
     "pre-commit": "^1.2.2",
     "prettier": "^2.7.1",

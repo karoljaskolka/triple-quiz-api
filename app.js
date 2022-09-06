@@ -20,6 +20,14 @@ sequelize
     console.error("Unable to connect to the database:", err);
   });
 
+const cors = require("cors");
+
+app.use(
+  cors({
+    origin: ["https://triple-quiz-angular.vercel.app"],
+  })
+);
+
 const helmet = require("helmet");
 
 app.use(helmet());
