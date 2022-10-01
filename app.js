@@ -55,26 +55,6 @@ app.use("/api/scores", scoreRoutes);
 app.use("/api/questions", questionRoutes);
 app.use("/api/quizzes", quizRoutes);
 
-const path = require("path");
-
-app.use("/angular", express.static(path.join(__dirname, "public/angular")));
-
-app.get("/angular/*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/public/angular/index.html"));
-});
-
-app.use("/react", express.static(path.join(__dirname, "public/react")));
-
-app.get("/react/*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/public/react/index.html"));
-});
-
-app.use("/vue", express.static(path.join(__dirname, "public/vue")));
-
-app.get("/vue/*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/public/vue/index.html"));
-});
-
 app.use((req, res, next) => {
   res.status(404).json({
     error_message: "error.not-found",

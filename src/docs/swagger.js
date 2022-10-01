@@ -3,7 +3,7 @@ module.exports = {
     openapi: "3.0.0",
     info: {
       title: "Triple Quiz API",
-      version: "1.1.1",
+      version: "1.2.0",
     },
   },
   apis: ["./src/docs/**/*.yaml"],

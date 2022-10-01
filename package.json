@@ -1,6 +1,6 @@
 {
   "name": "triple-quiz-api",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Triple Quiz Express.js API",
   "main": "app.js",
   "scripts": {
